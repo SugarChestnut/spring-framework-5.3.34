@@ -1,0 +1,19 @@
+apply plugin: "java"
+apply plugin: "kotlin"
+apply plugin: "kotlinx-serialization"
+
+description = "Spring Example"
+
+dependencies {
+    api(project(":spring-context"))
+    api(project(":spring-aspects"))
+    api(project(":spring-webmvc"))
+    api(project(":spring-tx"))
+    api(project(":spring-jdbc"))
+    api("org.slf4j:slf4j-api")
+    optional("ch.qos.logback:logback-classic:1.1.7")
+    optional("org.apache.logging.log4j:log4j-core")
+    optional("org.apache.logging.log4j:log4j-api")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine") // for @Inject TCK
+    testFixturesApi("org.junit.jupiter:junit-jupiter-api")
+}
