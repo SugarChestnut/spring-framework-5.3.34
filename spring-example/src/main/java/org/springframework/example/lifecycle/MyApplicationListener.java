@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @author rtt
  * @date 2023/3/27 14:51
  */
-// @Component
+ @Component
 public class MyApplicationListener implements ApplicationListener<ApplicationEvent> {
 
 	@Override

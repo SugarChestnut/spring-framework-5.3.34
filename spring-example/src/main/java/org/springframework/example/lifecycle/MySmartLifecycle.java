@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * @author rtt
  * @date 2023/3/27 14:40
  */
-// @Component
+ @Component
 public class MySmartLifecycle implements SmartLifecycle {
 
 	volatile boolean isRunning;

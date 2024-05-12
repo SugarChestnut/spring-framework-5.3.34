@@ -1,20 +1,20 @@
 package org.springframework.example;
 
-import org.springframework.example.bean.MyComponentSub;
-import org.springframework.example.web.UserController;
 import org.springframework.context.annotation.*;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.example.bean.EnableServer;
+import org.springframework.example.bean.FtpServer;
+import org.springframework.example.bean.HttpServer;
+import org.springframework.example.bean.Server;
 
 /**
  * @author rtt
  * @date 2023/9/22 11:11
  */
 @EnableAspectJAutoProxy
-@EnableTransactionManagement
 @ComponentScan(basePackageClasses = ExampleApplication.class)
 @ImportResource("applicationContext.xml")
-// @Component
-@MyComponentSub
+@Configuration
+@EnableServer(FtpServer.class)
 public class ExampleApplication {
 
 	public static void main(String[] args) {
@@ -30,9 +30,11 @@ public class ExampleApplication {
 		 */
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ExampleApplication.class);
 
-		UserController controller = context.getBean(UserController.class);
+		Server server = context.getBean(Server.class);
 
-		controller.ask();
+		server.start();
+
+		server.stop();
 
 		context.close();
 
