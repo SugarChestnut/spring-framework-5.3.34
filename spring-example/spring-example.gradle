@@ -1,19 +1,30 @@
 apply plugin: "java"
+apply plugin: "war"
 apply plugin: "kotlin"
 apply plugin: "kotlinx-serialization"
 
 description = "Spring Example"
 
 dependencies {
+    /*
+        api: java plugin 提供（引入项目内其他模块是用，外部模块也可）
+        implementation: 一般用于引入第三方库
+
+        optional:
+     */
     api(project(":spring-context"))
     api(project(":spring-aspects"))
     api(project(":spring-webmvc"))
     api(project(":spring-tx"))
     api(project(":spring-jdbc"))
+    compileOnly("javax.servlet:javax.servlet-api:3.1.0")
+//    providerCompile("javax.servlet:javax.servlet-api:3.1.0")
+
     api("org.slf4j:slf4j-api")
     optional("ch.qos.logback:logback-classic:1.1.7")
     optional("org.apache.logging.log4j:log4j-core")
     optional("org.apache.logging.log4j:log4j-api")
+
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine") // for @Inject TCK
     testFixturesApi("org.junit.jupiter:junit-jupiter-api")
 }

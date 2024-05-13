@@ -18,6 +18,7 @@ import org.springframework.example.bean.Server;
 public class ExampleApplication {
 
 	public static void main(String[] args) {
+		System.out.println("\n\n===========================\n\n");
 		// 用于代理类的保存路径
 		// System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "/Users/rentaotao/Study/source/Spring/spring-framework-5.19");
 
@@ -37,6 +38,8 @@ public class ExampleApplication {
 		server.stop();
 
 		context.close();
+
+		System.out.println("\n\n===========================\n\n");
 
 	}
 }
