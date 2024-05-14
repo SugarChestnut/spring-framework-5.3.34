@@ -1,4 +1,4 @@
-package org.springframework.example.bean;
+package org.springframework.example.bean.server;
 
 public interface Server {
 

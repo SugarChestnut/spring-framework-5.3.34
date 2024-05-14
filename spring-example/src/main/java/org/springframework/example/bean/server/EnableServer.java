@@ -1,4 +1,4 @@
-package org.springframework.example.bean;
+package org.springframework.example.bean.server;
 
 import org.springframework.context.annotation.Import;
 import org.springframework.core.annotation.AliasFor;

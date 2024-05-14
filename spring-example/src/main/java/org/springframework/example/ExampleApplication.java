@@ -1,10 +1,10 @@
 package org.springframework.example;
 
 import org.springframework.context.annotation.*;
-import org.springframework.example.bean.EnableServer;
-import org.springframework.example.bean.FtpServer;
-import org.springframework.example.bean.HttpServer;
-import org.springframework.example.bean.Server;
+import org.springframework.example.bean.MessageRepository;
+import org.springframework.example.bean.server.EnableServer;
+import org.springframework.example.bean.server.FtpServer;
+import org.springframework.example.bean.server.Server;
 
 /**
  * @author rtt
@@ -19,6 +19,7 @@ public class ExampleApplication {
 
 	public static void main(String[] args) {
 		System.out.println("\n\n===========================\n\n");
+		System.setProperty("area", "cn");
 		// 用于代理类的保存路径
 		// System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "/Users/rentaotao/Study/source/Spring/spring-framework-5.19");
 
@@ -36,6 +37,10 @@ public class ExampleApplication {
 		server.start();
 
 		server.stop();
+
+		MessageRepository messageRepository = context.getBean(MessageRepository.class);
+
+		messageRepository.hello();
 
 		context.close();
 

@@ -1,6 +1,6 @@
-package org.springframework.example.bean;
+package org.springframework.example.bean.server;
 
-public class FtpServer implements Server{
+public class FtpServer implements Server {
     @Override
     public void start() {
         System.out.println("FtpServer start");

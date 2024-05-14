@@ -1,4 +1,4 @@
-package org.springframework.example.bean;
+package org.springframework.example.bean.server;
 
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;

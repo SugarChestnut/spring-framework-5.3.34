@@ -1,6 +1,6 @@
-package org.springframework.example.bean;
+package org.springframework.example.bean.server;
 
-public class HttpServer implements Server{
+public class HttpServer implements Server {
     @Override
     public void start() {
         System.out.println("HttpServer start");
