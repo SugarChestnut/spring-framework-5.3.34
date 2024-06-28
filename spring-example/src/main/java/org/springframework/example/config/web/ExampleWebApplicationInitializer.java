@@ -1,4 +1,4 @@
-package org.springframework.example.config;
+package org.springframework.example.config.web;
 
 import org.springframework.web.WebApplicationInitializer;
 

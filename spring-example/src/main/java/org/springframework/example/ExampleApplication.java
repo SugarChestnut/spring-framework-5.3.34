@@ -1,7 +1,7 @@
 package org.springframework.example;
 
 import org.springframework.context.annotation.*;
-import org.springframework.example.bean.MessageRepository;
+import org.springframework.example.bean.message.MessageRepository;
 import org.springframework.example.bean.server.EnableServer;
 import org.springframework.example.bean.server.FtpServer;
 import org.springframework.example.bean.server.Server;
