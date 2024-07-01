@@ -5,6 +5,7 @@ import org.springframework.example.bean.message.MessageRepository;
 import org.springframework.example.bean.server.EnableServer;
 import org.springframework.example.bean.server.FtpServer;
 import org.springframework.example.bean.server.Server;
+import org.springframework.example.service.A;
 
 /**
  * @author rtt
@@ -41,6 +42,10 @@ public class ExampleApplication {
 		MessageRepository messageRepository = context.getBean(MessageRepository.class);
 
 		messageRepository.hello();
+
+		A a = context.getBean("a", A.class);
+
+		a.doIt();
 
 		context.close();
 
